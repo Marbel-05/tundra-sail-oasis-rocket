@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #5dc4e3;
+  --color-brand-deep: #1a7a96;
+  --color-brand-ink: #0e4a5c;
+  --color-ink: #16343c;
+  --color-ink-soft: #3d5c66;
+  --color-paper: #f3fafc;
+  --color-paper-pure: #ffffff;
+  --color-mist: #d8f1f8;
+  --color-line: #b6dce8;
+  --color-band: #5dc4e3;
+  --font-display: "Outfit", "Segoe UI", sans-serif;
+  --font-sans: "Source Sans 3", "Segoe UI", sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@media print {
+  nav,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  .print-break {
+    break-before: page;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
